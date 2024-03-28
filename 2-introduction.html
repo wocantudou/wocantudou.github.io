@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shauvin - 个人介绍</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        /* .left {
+            float: left;
+            width: 200px;
+            margin-right: 20px;
+        }
+        .right {
+            overflow: hidden;
+        } */
+        .left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .right {
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .time {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="left">
+                <img src="assets/images/Shauvin.jpg" alt="头像" class="photo">
+            </div>
+            <div class="right">
+                <h1>AI视觉算法工程师</h1>
+                <div style="border: 1px solid black; padding: 10px; font-size: 12px;">
+                    <p><strong>社会职称：工程师职称</strong></p>
+                    <p>简短介绍：我是AI视觉算法工程师，目前担任一个算法团队的Leader。我的团队在人脸、人体检测识别、手势识别、车辆车牌检测识别、文图检索(CLIP)、智能座舱视觉(DMS&OMS)以及芯片级视觉感知等领域拥有丰富的产品落地和交付经验。</p>
+                    <p>在工程方面，我精通C++和Python编程语言，负责所有算法引擎的C++架构设计，并致力于通用CBB能力组件的开发。</p>
+                    <p>在管理方面，无论是项目管理还是职能管理，我都具备丰富的经验，并曾多次获得最佳项目奖项。个人和团队的年度绩效常年保持A的水平。</p>
+                    <p>我的团队和我自己在算法和交付方面都有着深厚的积累，同时我们在工程和管理方面也取得了显著的成果。如果您需要更详细的信息或合作机会，请随时与我联系。</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <section id="education">
+            <h2>教育经历</h2>
+            <ul>
+                <li>中国科学技术大学(硕士) - 控制工程专业 - 2013年至2016年</li>
+                <li>安徽大学(本科) - 通信工程专业 - 2009年至2013年</li>
+            </ul>
+        </section>
+        <section id="work-experience">
+            <h2>工作经历</h2>
+            <ul>
+                <li>科大讯飞股份有限公司(合肥) - 算法工程师职位 - 2017年至今</li>
+                <pre>
+                    <li><strong>2021年3月至今：</strong>核心研究算法团队(30人+)leader，带领团队从0到1构建智能座舱视觉算法团队</li>
+                    
+                </pre>
+                
+                <li>中兴通讯股份有限公司(南京) - 算法工程师职位 - 2016年2017年</li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2>技能</h2>
+            <ul>
+                <li>C</li>
+                <li>Python</li>
+                <!-- 其他技能 -->
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>项目经历</h2>
+            <ul>
+                <li>项目1：XXX</li>
+                <li>项目2：XXX</li>
+                <!-- 其他项目 -->
+            </ul>
+        </section>
+    </div>
+    <div class="time">当前时间：<span id="time"></span></div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('zh-CN', { timeZoneName: 'short' });
+            document.getElementById('time').innerText = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
