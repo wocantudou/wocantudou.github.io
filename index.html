@@ -5,6 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chauvin</title>
+  <style>
+    .keys {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: blue;
+      color: yellow;
+      text-align: center;
+      margin: 100px auto;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+      animation: flyIn 2s ease-out forwards;
+    }
+  
+    @keyframes flyIn {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
   <meta name="Description" content="Home Page of Chauvin">
   <meta name="color-scheme" content="dark light">
   <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
@@ -31,6 +54,10 @@
       <a href="/introduction.html" class="animate-slide-in-down">Introduction</a>
       <a href="https://blog.csdn.net/mieshizhishou?type=blog" class="animate-slide-in-down">CSDN</a>
       <a href="https://weibo.com/wocantudou" class="animate-slide-in-down">WeiBo</a>
+    </div>
+    
+    <div class="keys">
+      <p>Try pressing keyboard 'B' to get a bookmark.</p>
     </div>
     <div class="location">
       <span class="location-icon animate-slide-in-up">
