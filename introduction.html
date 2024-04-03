@@ -7,28 +7,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            /* display: flex; */
         }
-        header {
+        header, footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 20px;
-        }
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-        p {
-            font-size: 18px;
-            word-wrap: break-word;
-            margin: 0;
         }
         .container {
             max-width: 960px;
@@ -38,56 +25,41 @@
         .section {
             margin-bottom: 40px;
         }
-        .section-title {
+        h1, h2 {
             font-size: 24px;
-            margin-bottom: 10px;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        pre {
-            white-space: pre-wrap; /* css-3 */
-            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-            white-space: -pre-wrap; /* Opera 4-6 */
-            white-space: -o-pre-wrap; /* Opera 7 */
-            word-wrap: break-word; /* Internet Explorer 5.5+ */
-            margin-left: 2em;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        p {
+            font-size: 16px;
+            line-height: 1.6;
         }
         .photo {
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
             border-radius: 50%;
-            margin: 0 auto;
+            margin-bottom: 20px;
         }
         .left {
-            float: left;
-            width: 200px;
-            margin-right: 20px;
-        }
-        .right {
-            overflow: hidden;
+            margin-bottom: 20px;
         }
         .time {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: bold;
             text-align: center;
             margin-top: 20px;
         }
-        .div-content-over{
-            overflow: hidden;
-            width: 100%;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+        @media only screen and (min-width: 768px) {
+            .left {
+                float: left;
+                margin-right: 20px;
+            }
+            .right {
+                overflow: hidden;
+            }
+        }
+        pre {
+            white-space: pre-wrap;
+            margin-left: 2em;
         }
     </style>
 </head>
@@ -99,7 +71,7 @@
             </div>
             <div class="right">
                 <h1>AI视觉算法工程师</h1>
-                <a href="assets/pdfs/Social_professional_title.pdf" style="font-size: 36px; color: red;">社会职称</a>
+                <a href="assets/pdfs/Social_professional_title.pdf" style="font-size: 18px; color: red;">社会职称</a>
                 <div style="border: 1px solid black; padding: 10px; font-size: 12px; width: 100%;">
                     <pre>
                     <p>简短介绍：作为一名AI视觉领域的”小学生“，我目前在一家领先的AI科技公司担任算法团队的Leader。我专注于人脸和人体检测识别、手势识别、车辆与车牌检测识别等前沿技术，并在文图检索（CLIP）、智能座舱视觉（DMS&OMS）以及芯片级视觉感知等领域积累了深厚的实战经验。凭借这些丰富的产品落地和交付经验，我不断推动团队创新，为公司的技术进步和业务发展贡献力量。</p>
@@ -166,8 +138,13 @@
             <ul>
                 <li>TODO</li>
             </ul>
-        </section>        
+        </section>  
     </div>
+    <footer>
+        <div class="container">
+            &copy; 2024 Shauvin. All rights reserved.
+        </div>
+    </footer>
     <div class="time">当前时间：<span id="time"></span></div>
     <script>
         function updateTime() {
