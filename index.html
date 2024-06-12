@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chauvin</title>
+    <!-- 确保main.css存在并包含通用样式 -->
     <link rel="stylesheet" href="assets/css/main.css">
     <style>
+        :root {
+            --primary-color: #76b852; /* 更新的颜色以提高可见性 */
+            --link-color: #f3ec78; /* 链接的亮色以增加对比度 */
+            --hover-color: #af4261; /* 鼠标悬停/聚焦时的颜色变化 */
+            --animation-duration: 2s; /* 动画持续时间变量 */
+        }
+
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
         body {
             font-family: 'Poppins', sans-serif;
             background: #000;
-            color: #76b852; /* Updated color for better visibility */
+            color: var(--primary-color);
             overflow-x: hidden;
             margin: 0;
             padding: 0;
@@ -86,12 +94,12 @@
         }
 
         a {
-            color: #f3ec78; /* Bright color for links for higher contrast */
-            transition: color 0.3s ease; /* Smooth transition for color change */
+            color: var(--link-color);
+            transition: color 0.3s ease;
         }
 
         a:hover, a:focus {
-            color: #af4261; /* Change color on hover/focus for visual feedback */
+            color: var(--hover-color);
         }
 
         @media screen and (max-width: 768px) {
@@ -108,12 +116,13 @@
             }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- 异步加载particles.min.js -->
+    <script async src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
     <div class="content">
-        <h1 class="centered gradient-text">Chauvin</h1>
+        <header class="centered gradient-text">Chauvin</header>
         <div class="quote bounce">
             <p>心有猛虎，细嗅蔷薇。</p>
             <p>《于我，过去，现在以及未来》—— <em class="rotate3d">西格里夫·萨松</em></p>
@@ -134,108 +143,7 @@
             Navigating to: <span class="relocate-location"></span>...
         </div>
     </div>
-    <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    },
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 400,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "b" || event.key === "B") {
-                document.querySelector(".relocate-location").textContent = "Bookmark Page";
-                document.querySelector(".relocating").style.opacity = "1";
-                setTimeout(function() {
-                    window.location.href = "bookmarks.html";
-                }, 1000);
-            }
-        });
-    </script>
+    <!-- 将JavaScript代码分离到外部文件 -->
+    <script src="assets/js/main_scripts.js"></script>
 </body>
 </html>
