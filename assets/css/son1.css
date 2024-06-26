@@ -90,6 +90,10 @@ pre {
     height: auto;
 }
 
+video {
+    max-width: 100%;
+    height: auto;
+}
 
 /* .gallery-item {
     display: inline-block;
