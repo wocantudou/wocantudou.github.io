@@ -1,3 +1,2 @@
 assets/downloads/endside/*.apk filter=lfs diff=lfs merge=lfs -text
 assets/downloads/cloudside/*.apk filter=lfs diff=lfs merge=lfs -text
-assets/videos/* filter=lfs diff=lfs merge=lfs -text
