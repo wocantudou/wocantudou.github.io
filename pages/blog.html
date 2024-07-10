@@ -47,6 +47,16 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+        #markdown-content {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        .loading {
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -112,10 +122,19 @@
             link.addEventListener('click', function(event) {
                 event.preventDefault();
                 const mdPath = this.getAttribute('data-md-path');
+                document.getElementById('markdown-content').innerHTML = '<p class="loading">加载中...</p>';
                 fetch(mdPath)
-                    .then(response => response.text())
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('网络响应失败');
+                        }
+                        return response.text();
+                    })
                     .then(mdContent => {
                         document.getElementById('markdown-content').innerHTML = marked(mdContent);
+                    })
+                    .catch(error => {
+                        document.getElementById('markdown-content').innerHTML = `<p class="loading">加载失败: ${error.message}</p>`;
                     });
             });
         });
