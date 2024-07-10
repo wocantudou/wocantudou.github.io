@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客导航</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .content {
+            padding: 20px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>我的博客</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#blog">博客</a></li>
+                <li><a href="#contact">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="content" id="home">
+            <h2>欢迎来到我的博客!</h2>
+            <p>这是我的个人博客，在这里我分享关于编程、技术和生活的点滴。</p>
+        </div>
+        
+        <div class="content" id="about">
+            <h2>关于我</h2>
+            <p>我是一个热爱编程和技术的开发者，喜欢分享我的学习和经验。</p>
+        </div>
+        
+        <div class="content" id="blog">
+            <h2>博客</h2>
+            <p>这里是我最新的博客文章：</p>
+            <ul>
+                <li><a href="../assets/blogs/SmartCockpit/DMSOMSRMS/DMSOMSRMS.md">基于智能座舱视觉DMS/OMS/RMS的简介</a></li>
+                <li><a href="../assets/blogs/BigModel/MM-LLM/MM-LLM.md">掌握MM-LLM的必备知识：原理、实现与示例</a></li>
+                <li><a href="../assets/blogs/BigModel/SafetyAlignment/SafetyAlignment.md">大模型应用中的安全对齐</a></li>
+                <li><a href="../assets/blogs/BigModel/SFT/SFT.md">大模型应用中什么是SFT（监督微调）？</a></li>
+            </ul>
+        </div>
+        
+        <div class="content" id="contact">
+            <h2>联系我</h2>
+            <p>如果你有任何问题或建议，可以通过以下方式联系我：</p>
+            <ul>
+                <li>Email: shawen@mail.ustc.edu.cn</li>
+                <li>Email: 1209022631@qq.com</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 我的博客. 保留所有权利.</p>
+        </div>
+    </footer>
+</body>
+</html>
