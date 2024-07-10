@@ -82,11 +82,12 @@
             <h2>博客</h2>
             <p>这里是我最新的博客文章：</p>
             <ul>
-                <li><a href="../assets/blogs/SmartCockpit/DMSOMSRMS/DMSOMSRMS.md">基于智能座舱视觉DMS/OMS/RMS的简介</a></li>
-                <li><a href="../assets/blogs/BigModel/MM-LLM/MM-LLM.md">掌握MM-LLM的必备知识：原理、实现与示例</a></li>
-                <li><a href="../assets/blogs/BigModel/SafetyAlignment/SafetyAlignment.md">大模型应用中的安全对齐</a></li>
-                <li><a href="../assets/blogs/BigModel/SFT/SFT.md">大模型应用中什么是SFT（监督微调）？</a></li>
+                <li><a href="#" data-md-path="../assets/blogs/SmartCockpit/DMSOMSRMS/DMSOMSRMS.md">基于智能座舱视觉DMS/OMS/RMS的简介</a></li>
+                <li><a href="#" data-md-path="../assets/blogs/BigModel/MM-LLM/MM-LLM.md">掌握MM-LLM的必备知识：原理、实现与示例</a></li>
+                <li><a href="#" data-md-path="../assets/blogs/BigModel/SafetyAlignment/SafetyAlignment.md">大模型应用中的安全对齐</a></li>
+                <li><a href="#" data-md-path="../assets/blogs/BigModel/SFT/SFT.md">大模型应用中什么是SFT（监督微调）？</a></li>
             </ul>
+            <div id="markdown-content"></div>
         </div>
         
         <div class="content" id="contact">
@@ -104,5 +105,20 @@
             <p>&copy; 2024 我的博客. 保留所有权利.</p>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        document.querySelectorAll('a[data-md-path]').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const mdPath = this.getAttribute('data-md-path');
+                fetch(mdPath)
+                    .then(response => response.text())
+                    .then(mdContent => {
+                        document.getElementById('markdown-content').innerHTML = marked(mdContent);
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
