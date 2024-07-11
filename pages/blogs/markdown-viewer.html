@@ -9,14 +9,24 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             padding: 20px;
+            margin: 0;
         }
         .container {
-            width: 80%;
-            margin: auto;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
             overflow: hidden;
         }
         .content {
             padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 600px) {
+            .content {
+                padding: 10px;
+            }
         }
     </style>
 </head>
