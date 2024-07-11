@@ -1,57 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown 预览</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        #markdown-content {
-            border: 1px solid #ddd;
-            padding: 20px;
-            background: #f9f9f9;
-        }
-        .loading {
-            text-align: center;
-            font-size: 1.2em;
-            color: #333;
-        }
-    </style>
+  <meta charset="utf-8"/>
+  <title>Marked in the browser</title>
 </head>
 <body>
-    <div id="markdown-content">加载中...</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        // 获取URL中的路径参数
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        const mdPath = getQueryParam('path');
-
-        if (mdPath) {
-            fetch(mdPath)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('网络响应失败');
-                    }
-                    return response.text();
-                })
-                .then(mdContent => {
-                    document.getElementById('markdown-content').innerHTML = marked(mdContent);
-                })
-                .catch(error => {
-                    document.getElementById('markdown-content').innerHTML = `<p class="loading">加载失败: ${error.message}</p>`;
-                });
-        } else {
-            document.getElementById('markdown-content').innerHTML = '<p class="loading">未提供Markdown文件路径</p>';
-        }
-    </script>
+  <div id="content"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    document.getElementById('content').innerHTML =
+      marked.parse('# Marked in the browser\n\nRendered by **marked**.');
+  </script>
 </body>
 </html>
