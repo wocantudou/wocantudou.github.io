@@ -1,15 +1,58 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <title>Marked in the browser</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-  <div id="content"></div>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
-    document.getElementById('content').innerHTML =
-      marked.parse('# Marked in the browser\n\nRendered by **marked**.');
-  </script>
+    <div class="container">
+        <div class="content" id="markdown-content">
+            <!-- Markdown content will be rendered here -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        // Function to fetch and render Markdown content
+        async function renderMarkdown(file) {
+            try {
+                const response = await fetch(file);
+                const markdownText = await response.text();
+                const markdownContent = document.getElementById('markdown-content');
+                markdownContent.innerHTML = marked.parse(markdownText);
+            } catch (error) {
+                console.error('Error loading or parsing Markdown file:', error);
+                const markdownContent = document.getElementById('markdown-content');
+                markdownContent.innerHTML = '<p>Error loading Markdown content.</p>';
+            }
+        }
+
+        // Get the file parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get('file');
+
+        if (file) {
+            renderMarkdown(file);
+        } else {
+            const markdownContent = document.getElementById('markdown-content');
+            markdownContent.innerHTML = '<p>No Markdown file specified.</p>';
+        }
+    </script>
 </body>
 </html>
