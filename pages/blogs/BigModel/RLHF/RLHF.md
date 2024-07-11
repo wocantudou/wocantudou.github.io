@@ -1,4 +1,4 @@
-![RLHF](./RLHF.png)
+![RLHF](BigModel/RLHF/RLHF.png)
 # 什么是RLHF（基于人类反馈的强化学习）？
 
 基于人类反馈的强化学习（Reinforcement Learning from Human Feedback, RLHF）是一种结合强化学习和人类反馈的技术，用于训练智能体，使其行为更符合人类期望。这种方法在自然语言处理（NLP）领域，特别是对话生成任务中，取得了显著的效果。

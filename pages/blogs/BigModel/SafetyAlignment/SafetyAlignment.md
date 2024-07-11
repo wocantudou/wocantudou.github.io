@@ -1,4 +1,4 @@
-![SafetyAlignment](./SafetyAlignment.png)
+![SafetyAlignment](BigModel/SafetyAlignment/SafetyAlignment.png)
 ### 大模型应用中的安全对齐
 
 随着人工智能技术的不断发展，大规模语言模型（如GPT-4）的应用越来越广泛。为了保证这些大模型在实际应用中的性能和安全性，安全对齐（Safe Alignment）成为一个重要的概念。

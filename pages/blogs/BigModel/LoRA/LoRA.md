@@ -1,4 +1,4 @@
-![LoRA](./LoRA.png)
+![LoRA](BigModel/LoRA/LoRA.png)
 # LoRA：低秩适配的深度学习模型简介
 
 LoRA (Low-Rank Adaptation) 是一种用于高效微调大型预训练模型的方法，旨在降低训练过程中所需的计算资源和存储需求。它通过引入低秩矩阵分解来优化模型参数，从而减少计算量和参数量。
