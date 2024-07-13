@@ -1,4 +1,4 @@
-![LoRA](BigModel/IFT/IFT.png)
+![IFT](BigModel/IFT/IFT.png)
 # 大模型应用中什么是IFT（指令微调）？
 
 ## 背景
