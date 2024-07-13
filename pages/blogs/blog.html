@@ -8,9 +8,11 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            width: 80%;
+            width: 90%;
             margin: auto;
             overflow: hidden;
         }
@@ -28,6 +30,7 @@
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
         nav ul li {
             display: inline;
@@ -46,6 +49,15 @@
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
