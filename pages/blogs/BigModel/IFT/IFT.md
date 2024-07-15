@@ -19,11 +19,11 @@ Instruction Fine-Tuning 的核心思想是通过提供明确的指令（Instruct
 
 ### 公式
 
-设预训练语言模型为 $M_{\theta}$，指令为 $I$，任务输入为 $x$，期望的输出为 $y$。指令微调的目标是通过最小化以下损失函数来调整模型参数 $\theta$:
+设预训练语言模型为$M_{\theta}$，指令为$I$，任务输入为$x$，期望的输出为$y$。指令微调的目标是通过最小化以下损失函数来调整模型参数$\theta$:
 
-$$ \mathcal{L}(\theta) = \mathbb{E}_{(x, y) \sim D} [\ell(M_{\theta}(I, x), y)] $$
+$$\mathcal{L}(\theta) = \mathbb{E}_{(x, y) \sim D} [\ell(M_{\theta}(I, x), y)]$$
 
-其中，$\ell$ 是损失函数（例如交叉熵损失），$D$ 是训练数据集。
+其中，$\ell$是损失函数（例如交叉熵损失），$D$是训练数据集。
 
 ## 绩效
 

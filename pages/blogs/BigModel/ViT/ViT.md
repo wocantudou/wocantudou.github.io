@@ -14,19 +14,19 @@ ViT的核心思想是将图像分割成小块（patches），然后将这些小�
 ### 线性投影（Linear Projection of Flattened Patches）
 
 每个图像块展平为一个向量，然后通过一个线性变换映射到更高维的向量空间。假设每个图像块展平成一个长度为N的向量，通过线性投影将其映射到D维空间。这个过程可以表示为：
-$$ z_0^i = x_p^iE, \quad \text{其中} \quad x_p^i \in \mathbb{R}^{N}, \quad E \in \mathbb{R}^{N \times D} $$
+$$z_0^i = x_p^iE, \quad \text{其中} \quad x_p^i \in \mathbb{R}^{N}, \quad E \in \mathbb{R}^{N \times D}$$
 其中，$x_p^i$是第i个图像块的向量，$E$是可学习的线性投影矩阵。
 
 ### 添加位置编码（Positional Encoding）
 
 由于Transformer模型不具备位置感知能力，需要为每个图像块添加位置信息。位置编码可以使用固定的正弦和余弦函数，也可以是可学习的。公式如下：
-$$ z_0^i = x_p^iE + E_{pos}^i, \quad \text{其中} \quad E_{pos}^i \in \mathbb{R}^{D} $$
+$$z_0^i = x_p^iE + E_{pos}^i, \quad \text{其中} \quad E_{pos}^i \in \mathbb{R}^{D}$$
 其中，$E_{pos}^i$是第i个图像块的位置信息。
 
 ### Transformer编码器（Transformer Encoder）
 
 带有位置信息的图像块序列输入到标准的Transformer编码器中。Transformer编码器包含多层多头自注意力机制和前馈神经网络。每一层的自注意力机制可以表示为：
-$$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 其中，$Q$、$K$、$V$分别是查询、键、值矩阵，$d_k$是缩放因子。
 
 ### 分类头（Classification Head）
@@ -36,11 +36,11 @@ Transformer编码器的输出经过一个分类头，用于图像分类任务。
 ### 公式总结
 
 - **线性投影**：
-  $$ z_0^i = x_p^iE $$
+$$z_0^i = x_p^iE$$
 - **位置编码**：
-  $$ z_0^i = x_p^iE + E_{pos}^i $$
+$$z_0^i = x_p^iE + E_{pos}^i$$
 - **自注意力机制**：
-  $$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 ## ViT的使用场景
 

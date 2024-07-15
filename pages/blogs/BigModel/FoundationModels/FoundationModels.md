@@ -30,19 +30,19 @@ Foundation Models通常基于深度学习架构，尤其是Transformer。Transfo
 3. **前馈神经网络**：对注意力机制生成的表示进行进一步处理。
 
 #### 自注意力机制（Self-Attention）的公式
-自注意力机制的关键在于计算输入序列中各个元素之间的相关性。具体来说，给定输入序列表示 $\{x_1, x_2, \ldots, x_n\}$，自注意力机制通过以下步骤进行计算：
+自注意力机制的关键在于计算输入序列中各个元素之间的相关性。具体来说，给定输入序列表示$\{x_1, x_2, \ldots, x_n\}$，自注意力机制通过以下步骤进行计算：
 
 1. **计算Query，Key，Value矩阵**：
-   $$
+ $$
    Q = XW_Q, \quad K = XW_K, \quad V = XW_V
-   $$
-   其中，$X$ 为输入序列表示矩阵，$W_Q$，$W_K$，$W_V$ 为可训练的权重矩阵。
+ $$
+   其中，$X$为输入序列表示矩阵，$W_Q$，$W_K$，$W_V$为可训练的权重矩阵。
 
 2. **计算注意力得分**：
-   $$
+ $$
    \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-   $$
-   其中，$d_k$ 为Key向量的维度，用于缩放以避免数值不稳定。
+ $$
+   其中，$d_k$为Key向量的维度，用于缩放以避免数值不稳定。
 
 ### 3.2 预训练和微调
 Foundation Models通常采用两阶段训练策略：
@@ -54,15 +54,15 @@ Foundation Models通常采用两阶段训练策略：
 以BERT为例，其预训练过程包括两个任务：
 
 1. **掩码语言模型（Masked Language Model, MLM）**：随机掩盖输入序列中的一些词汇，模型需要预测这些被掩盖的词。
-   $$
+ $$
    \mathcal{L}_{MLM} = -\sum_{i \in \text{masked}} \log P(x_i | \tilde{X})
-   $$
-   其中，$\tilde{X}$ 是部分词汇被掩盖的输入序列。
+ $$
+   其中，$\tilde{X}$是部分词汇被掩盖的输入序列。
 
 2. **下一句预测（Next Sentence Prediction, NSP）**：判断两句话是否是连续的。
-   $$
+ $$
    \mathcal{L}_{NSP} = -\log P(\text{IsNext} | X_1, X_2)
-   $$
+ $$
 
 ### 3.3 优势
 - **泛化能力强**：能够在多个任务上表现优异，减少了为每个任务单独训练模型的需求。

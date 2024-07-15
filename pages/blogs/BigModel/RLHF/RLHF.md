@@ -11,12 +11,12 @@
 
 在强化学习（Reinforcement Learning, RL）中，智能体（agent）通过与环境（environment）交互来学习如何采取行动（action），以最大化累积的奖励（reward）。其基本框架包括：
 
-- **状态（State, $s$）**：智能体在某一时刻所处的环境状况。
-- **动作（Action, $a$）**：智能体在某一状态下可以采取的行为。
-- **奖励（Reward, $r$）**：智能体采取某一动作后，从环境中获得的反馈信号。
-- **策略（Policy, $\pi$）**：智能体从状态到动作的映射关系，决定了智能体在特定状态下采取的动作。
+- **状态（State,$s$）**：智能体在某一时刻所处的环境状况。
+- **动作（Action,$a$）**：智能体在某一状态下可以采取的行为。
+- **奖励（Reward,$r$）**：智能体采取某一动作后，从环境中获得的反馈信号。
+- **策略（Policy,$\pi$）**：智能体从状态到动作的映射关系，决定了智能体在特定状态下采取的动作。
 
-强化学习的目标是找到最优策略 $\pi^*$，使得累积奖励最大化。
+强化学习的目标是找到最优策略$\pi^*$，使得累积奖励最大化。
 
 ### 人类反馈的引入
 
@@ -24,11 +24,11 @@ RLHF 在传统强化学习的框架中引入了人类反馈。具体来说，人
 
 ## RLHF的公式
 
-在 RLHF 中，目标是通过人类反馈来调整策略，以最大化人类评价的累积值。设人类反馈为 $ H(s, a) $，其代表了人类对智能体在状态 $ s $ 下采取动作 $ a $ 的评价。RLHF 的目标是找到使得人类评价累积值最大的策略 $\pi$：
+在 RLHF 中，目标是通过人类反馈来调整策略，以最大化人类评价的累积值。设人类反馈为$H(s, a)$，其代表了人类对智能体在状态$s$下采取动作$a$的评价。RLHF 的目标是找到使得人类评价累积值最大的策略$\pi$：
 
-$$ \pi^* = \arg\max_{\pi} \mathbb{E} \left[ \sum_{t=0}^{T} H(s_t, a_t) \mid \pi \right] $$
+$$\pi^* = \arg\max_{\pi} \mathbb{E} \left[ \sum_{t=0}^{T} H(s_t, a_t) \mid \pi \right]$$
 
-其中， $T$ 为时间步长的总数。
+其中，$T$为时间步长的总数。
 
 ## 通俗易懂的示例
 
@@ -92,9 +92,9 @@ print(chatbot.policy)
 
 为了防止策略过拟合人类反馈，可以引入正则化项。例如，可以对策略的变化进行限制，避免过度调整。
 
-$$ L(\pi) = \mathbb{E} \left[ \sum_{t=0}^{T} H(s_t, a_t) \mid \pi \right] - \lambda \|\pi - \pi_0\|^2 $$
+$$L(\pi) = \mathbb{E} \left[ \sum_{t=0}^{T} H(s_t, a_t) \mid \pi \right] - \lambda \|\pi - \pi_0\|^2$$
 
-其中，$\pi_0$ 是初始策略，$\lambda$ 是正则化参数。
+其中，$\pi_0$是初始策略，$\lambda$是正则化参数。
 
 ### 2. 多样性奖励（Diversity Reward）
 
@@ -104,9 +104,9 @@ $$ L(\pi) = \mathbb{E} \left[ \sum_{t=0}^{T} H(s_t, a_t) \mid \pi \right] - \lam
 
 为了防止策略更新过于激进，可以采用平滑策略更新的方法。例如，可以使用软更新（soft update）的方法逐步调整策略。
 
-$$ \pi_{\text{new}} = \alpha \pi_{\text{new}} + (1 - \alpha) \pi_{\text{old}} $$
+$$\pi_{\text{new}} = \alpha \pi_{\text{new}} + (1 - \alpha) \pi_{\text{old}}$$
 
-其中，$\alpha$ 是更新速率参数。
+其中，$\alpha$是更新速率参数。
 
 ### 4. 逆强化学习（Inverse Reinforcement Learning, IRL）
 
