@@ -30,11 +30,12 @@
         nav ul {
             list-style: none;
             padding: 0;
-            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: space-around; /* 修改为水平分布 */
         }
         nav ul li {
             display: inline;
-            margin: 0 10px;
         }
         nav ul li a {
             color: #fff;
@@ -54,10 +55,26 @@
             .container {
                 width: 95%;
             }
-            nav ul li {
-                display: block;
-                margin: 10px 0;
+            nav ul {
+                flex-direction: column;
+                align-items: center;
             }
+        }
+        .gallery {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 300px; /* 设置相册高度 */
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .gallery img.active {
+            opacity: 1;
         }
     </style>
 </head>
@@ -78,6 +95,19 @@
             </ul>
         </div>
     </nav>
+    
+    <!-- 相册部分 -->
+    <div class="container">
+        <div class="content">
+            <h2>我的相册</h2>
+            <div class="gallery">
+                <img src="../../assets/images/show/with_qfliu.jpg" alt="刘庆峰合照">
+                <!-- <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3"> -->
+                <!-- 添加更多图片 -->
+            </div>
+        </div>
+    </div>
     
     <div class="container">
         <div class="content" id="home">
@@ -125,5 +155,20 @@
             <p>&copy; 2024 我的博客. 保留所有权利.</p>
         </div>
     </footer>
+
+    <script>
+        const gallery = document.querySelector('.gallery');
+        const images = gallery.querySelectorAll('img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        images[currentIndex].classList.add('active');
+        setInterval(showNextImage, 1000);
+    </script>
 </body>
 </html>
