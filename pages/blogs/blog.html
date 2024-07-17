@@ -32,7 +32,7 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: space-around; /* 修改为水平分布 */
+            justify-content: space-around;
         }
         nav ul li {
             display: inline;
@@ -64,7 +64,7 @@
             width: 100%;
             overflow: hidden;
             position: relative;
-            height: 300px; /* 设置相册高度 */
+            height: 300px;
         }
         .gallery img {
             width: 100%;
@@ -96,14 +96,12 @@
         </div>
     </nav>
     
-    <!-- 相册部分 -->
     <div class="container">
         <div class="content">
             <h2>我的相册</h2>
             <div class="gallery">
-                <img src="../../assets/images/show/with_qfliu.jpg" alt="刘庆峰合照">
-                <!-- <img src="image2.jpg" alt="Image 2">
-                <img src="image3.jpg" alt="Image 3"> -->
+                <img src="../../assets/images/show/with_qfliu.jpg" alt="公司合照">
+                <img src="../../assets/images/show/with_family.jpg" alt="家庭合照">
                 <!-- 添加更多图片 -->
             </div>
         </div>
@@ -168,7 +166,7 @@
         }
 
         images[currentIndex].classList.add('active');
-        setInterval(showNextImage, 1000);
+        setInterval(showNextImage, 3000); // 改为每3秒切换一次图片
     </script>
 </body>
 </html>
