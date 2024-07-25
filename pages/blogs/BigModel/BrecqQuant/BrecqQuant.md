@@ -1,3 +1,4 @@
+![BrecqQuant](BigModel/BrecqQuant/BrecqQuant.png)
 # 商汤提出的BRECQ量化框架是个什么？ 
 ## 引言
 
