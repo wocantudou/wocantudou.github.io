@@ -1,9 +1,9 @@
 ![MoE](BigModel/MoE/MoE.png)
-### 大模型中的MoE是什么？
+# 大模型中的MoE是什么？
 
 MoE（Mixture of Experts）是一种用于提高深度学习模型性能和效率的架构。其核心思想是通过引入多个专家（Experts）模型，每个输入数据只选择和激活其中的一部分专家模型来进行处理，从而减少计算量，提高训练和推理速度。
 
-### MoE的底层原理
+## MoE的底层原理
 
 MoE架构由两个主要部分组成：
 
@@ -26,7 +26,7 @@ $$y = \sum_{i=1}^{N} g_i(x) \cdot f_i(x)$$
 - $g_i(x)$ 是第 $i$ 个专家的权重，由门控网络生成
 - $f_i(x)$ 是第 $i$ 个专家的输出
 
-### MoE的实现方法
+## MoE的实现方法
 
 MoE有多种实现方法，主要可以分为以下几种：
 
@@ -35,7 +35,7 @@ MoE有多种实现方法，主要可以分为以下几种：
 3. **Sparse MoE**
 4. **Hierarchical MoE**
 
-#### 1. Soft Gating MoE
+### 1. Soft Gating MoE
 
 在Soft Gating MoE中，所有专家的输出都会被加权并合并。门控网络的输出是一个概率分布，对所有专家的输出进行加权平均。
 
@@ -65,7 +65,7 @@ model = SoftGatingMoE(input_dim=20, num_experts=5, expert_dim=30)
 output = model(input_data)
 ```
 
-#### 2. Hard Gating MoE
+### 2. Hard Gating MoE
 
 在Hard Gating MoE中，每个输入数据只选择一个专家来处理。门控网络的输出是一个one-hot编码，表示被选择的专家。
 
@@ -91,7 +91,7 @@ model = HardGatingMoE(input_dim=20, num_experts=5, expert_dim=30)
 output = model(input_data)
 ```
 
-#### 3. Sparse MoE
+### 3. Sparse MoE
 
 Sparse MoE通过选择少量的专家来处理输入数据，通常使用Top-k选择机制来选择权重最大的k个专家，从而实现稀疏化。
 
@@ -120,7 +120,7 @@ model = SparseMoE(input_dim=20, num_experts=5, expert_dim=30, k=2)
 output = model(input_data)
 ```
 
-#### 4. Hierarchical MoE
+### 4. Hierarchical MoE
 
 Hierarchical MoE采用层次化的结构，首先选择一个子集的专家，然后在子集中进一步选择。
 
@@ -154,11 +154,11 @@ model = HierarchicalMoE(input_dim=20, num_experts=8, expert_dim=30, num_clusters
 output = model(input_data)
 ```
 
-### MoE的具体应用场景
+## MoE的具体应用场景
 
 MoE模型在实际应用中具有广泛的潜力，特别是在需要处理大规模数据、提高模型效率和性能的场景。以下是一些具体的应用场景：
 
-#### 1. 自然语言处理（NLP）
+### 1. 自然语言处理（NLP）
 
 在NLP领域，MoE模型可以用于提高各种任务的性能，例如机器翻译、文本生成、情感分析等。通过选择适当的专家来处理不同类型的文本数据，MoE模型可以显著提高处理速度和准确性。
 
@@ -187,7 +187,7 @@ model = TranslationMoE(input_dim=512, num_experts=5, expert_dim=512)
 output = model(src, tgt)
 ```
 
-#### 2. 图像处理
+### 2. 图像处理
 
 在图像处理任务中，MoE模型可以用于图像分类、目标检测、图像生成等任务。通过选择适合处理特定图像特征的专家模型，MoE可以提高图像处理的效率和精度。
 
@@ -218,7 +218,7 @@ model = ImageClassificationMoE(input_dim=3, num_experts=5, expert_dim=64, num_cl
 output = model(input_data)
 ```
 
-#### 3. 推荐系统
+### 3. 推荐系统
 
 在推荐系统中，MoE模型可以用于个性化推荐。不同用户群体可能对不同类型的内容感兴趣，通过MoE模型可以选择适合特定用户群体的专家模型，从而提高推荐效果。
 
@@ -248,6 +248,6 @@ model = RecommendationMoE(input_dim=50, num_experts=5, expert_dim=128, num_items
 output = model(user_features)
 ```
 
-### 总结
+## 总结
 
 MoE通过将任务分配给多个专家模型并引入门控机制，有效地减少了计算复杂度，提高了模型的效率和性能。不同类型的MoE模型可以根据具体的应用场景进行选择和调整。通过合理设计和使用MoE，能够显著提升深度学习模型的训练和推理效率。

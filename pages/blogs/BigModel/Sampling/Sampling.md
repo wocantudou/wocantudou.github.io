@@ -1,15 +1,15 @@
 ![Sampling](BigModel/Sampling/Sampling.png)
-## 大模型中的采样选择机制详解
+# 大模型中的采样选择机制详解
 
 在自然语言处理（NLP）和生成模型（如GPT）中，采样选择机制是一种从模型的概率分布中选择词的方法，用于控制生成文本的多样性和质量。本文将详细介绍几种经典的采样选择机制，包括随机采样、Top-k采样、Top-p（Nucleus）采样、温度采样、束搜索（Beam Search）和逆向温度采样，并配以公式和代码示例。
 
-### 一、采样选择机制概述
+## 一、采样选择机制概述
 
 采样选择机制通过不同的方法从模型的输出概率分布中选择下一个生成的词，从而影响生成文本的特性和质量。
 
-### 二、经典采样选择机制
+## 二、经典采样选择机制
 
-#### 1. 随机采样
+### 1. 随机采样
 
 **随机采样**是最简单的一种方法，直接从模型输出的概率分布中随机选择下一个词。它保留了概率分布的多样性，但可能生成不连贯的文本。
 
@@ -49,7 +49,7 @@ next_token_index = random_sampling(logits)
 print("随机采样得到的下一个词索引：", next_token_index)
 ```
 
-#### 2. Top-k采样
+### 2. Top-k采样
 
 **Top-k采样**通过选择概率最高的k个词，截断概率分布以限制候选集，随后从中采样。这种方法可以减少生成不合理词的概率。
 
@@ -97,7 +97,7 @@ next_token_index = top_k_sampling(logits, k=3)
 print("Top-k采样得到的下一个词索引：", next_token_index)
 ```
 
-#### 3. Top-p（Nucleus）采样
+### 3. Top-p（Nucleus）采样
 
 **Top-p（Nucleus）采样**通过选择累计概率达到某个阈值p的最小词集，动态调整候选集的大小，从而在控制多样性和质量之间取得平衡。
 
@@ -155,7 +155,7 @@ next_token_index = top_p_sampling(logits, p=0.8)
 print("Top-p采样得到的下一个词索引：", next_token_index)
 ```
 
-#### 4. 温度采样
+### 4. 温度采样
 
 **温度采样**通过调整概率分布的“温度”参数来控制生成文本的多样性。温度越高，生成的文本越多样化；温度越低，生成的文本越确定性。
 
@@ -201,7 +201,7 @@ next_token_index = temperature_sampling(logits, temperature=0.7)
 print("温度采样得到的下一个词索引：", next_token_index)
 ```
 
-#### 5. 束搜索（Beam Search）
+### 5. 束搜索（Beam Search）
 
 **束搜索（Beam Search**是一种启发式搜索算法，通过保留多个候选序列来寻找最优序列。束搜索在每个时间步保留固定数量的候选序列，并扩展这些候选序列直到达到最大长度。
 
@@ -257,7 +257,7 @@ best_sequence = beam_search(example_logits_fn, initial_input, beam_width=3, max_
 print("束搜索得到的最优序列：", best_sequence)
 ```
 
-#### 6. 逆向温度采样（Reverse Temperature Sampling）
+### 6. 逆向温度采样（Reverse Temperature Sampling）
 
 **逆向温度采样**通过逐步提高温度参数，从确定性较高的分布逐步过渡到多样性更高的分布。这种方法可以生成更加自然的文本。
 
@@ -306,6 +306,6 @@ next_token_index = reverse_temperature_sampling(logits, initial_temperature=1.0,
 print("逆向温度采样得到的下一个词索引：", next_token_index)
 ```
 
-### 三、总结
+## 三、总结
 
 本文详细介绍了大模型中的几种经典采样选择机制，包括随机采样、Top-k采样、Top-p（Nucleus）采样、温度采样、束搜索（Beam Search）和逆向温度采样。每种机制有不同的特点和适用场景，选择适当的机制可以有效地控制生成文本的质量和多样性。希望通过本文的介绍，读者能够理解并应用这些采样选择机制，提高生成模型的表现。
