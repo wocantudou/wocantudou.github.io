@@ -1,5 +1,5 @@
 ![Mamba](BigModel/Mamba/Mamba.png)
-# 号称超越Transformer架构的Mamba架构是什么？
+# 曼巴大战变形金刚：号称超越Transformer架构的Mamba架构是什么？
 
 Mamba 是一种新兴的深度学习架构，旨在解决长序列数据的建模问题。它通过将状态空间模型 (State Space Models, SSM) 与选择性机制、并行计算等方法相结合，实现了高效的长序列处理。这篇博客将深入探讨 Mamba 架构的各个组成部分，解释其背后的原理。
 
