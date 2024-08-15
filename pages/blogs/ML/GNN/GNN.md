@@ -1,5 +1,5 @@
 ![GNN](ML/GNN/GNN.png)
-# 图神经网络（Graph Neural Networks）详解：探索图数据的深度学习方法
+# 图神经网络（Graph Neural Networks）是什么？
 
 ## 引言
 
