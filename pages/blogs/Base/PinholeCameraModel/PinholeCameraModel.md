@@ -1,5 +1,5 @@
 ![PinholeCameraModel](Base/PinholeCameraModel/PinholeCameraModel.png)
-# 针孔相机模型详解：三维世界到二维图像的映射
+# 针孔相机模型（Pinhole Camera Model）详解：三维世界到二维图像的映射
 
 针孔相机模型（Pinhole Camera Model）是计算机视觉和计算机图形学中的一个基础且重要的概念，它描述了三维空间中的点与它们在理想针孔相机的图像平面上的投影之间的数学关系。本文将详细探讨针孔相机模型的工作原理及其应用场景。
 
