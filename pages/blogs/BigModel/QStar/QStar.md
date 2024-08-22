@@ -1,5 +1,5 @@
 ![QStar](BigModel/QStar/QStar.jpg)
-# Q*算法深度猜猜：从Q-learning优化到智能决策
+# Q*算法深度猜想：从Q-learning优化到智能决策
 
 ## 引言
 

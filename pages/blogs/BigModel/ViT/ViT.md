@@ -1,4 +1,4 @@
-![SFT](BigModel/ViT/ViT.png)
+![ViT](BigModel/ViT/ViT.png)
 # ViT（Vision Transformer）详解及应用
 
 ViT，全称Vision Transformer，是一种将Transformer模型应用于计算机视觉任务的创新方法。Transformer模型最初是为自然语言处理任务设计的，但ViT成功地将其扩展到图像分类等视觉任务中。本文将详细介绍ViT的结构、原理，并结合医学图像分类的具体应用场景，提供一个完整的代码示例。

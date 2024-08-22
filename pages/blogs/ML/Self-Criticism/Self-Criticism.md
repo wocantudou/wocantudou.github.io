@@ -1,5 +1,5 @@
 ![Self-Criticism](ML/Self-Criticism/Self-Criticism.png)
-# “草莓哥”争议背后的AgentQ使用的自我批评技术是什么？
+# “草莓哥”争议事件背后的AgentQ使用的自我批评技术是什么？
 
 近期，“草莓哥”事件在网络上引发了广泛关注，其背后的AI智能体AgentQ成为了讨论焦点。AgentQ由创业公司MultiOn AI开发，该智能体采用了先进的自我批评技术，作为其复杂决策和自我修复能力的重要组成部分。
 
