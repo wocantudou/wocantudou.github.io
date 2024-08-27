@@ -77,16 +77,19 @@
             }
         }
 
-        // Get the file parameter from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const file = urlParams.get('file');
+        // Ensure the Markdown content is rendered when the page loads
+        window.addEventListener('load', () => {
+            // Get the file parameter from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const file = urlParams.get('file');
 
-        if (file) {
-            renderMarkdown(file);
-        } else {
-            const markdownContent = document.getElementById('markdown-content');
-            markdownContent.innerHTML = '<p>No Markdown file specified.</p>';
-        }
+            if (file) {
+                renderMarkdown(file);
+            } else {
+                const markdownContent = document.getElementById('markdown-content');
+                markdownContent.innerHTML = '<p>No Markdown file specified.</p>';
+            }
+        });
     </script>
 </body>
 </html>
