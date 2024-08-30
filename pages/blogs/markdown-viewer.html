@@ -50,13 +50,13 @@
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                packages: {'[+]': ['base', 'boldsymbol']} // Add boldsymbol package
+                packages: {'[+]': ['base', 'ams', 'boldsymbol']} // Add ams and boldsymbol packages
             },
             options: {
                 skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
             },
             loader: {
-                load: ['[tex]/boldsymbol'] // Load boldsymbol package
+                load: ['[tex]/ams', '[tex]/boldsymbol'] // Load ams and boldsymbol packages
             }
         };
 
