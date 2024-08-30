@@ -41,7 +41,7 @@ MAML的核心思想是通过多任务训练，使得模型参数能够成为一�
 2. **内部更新**：对于每个任务，使用当前模型参数 $\theta$ 进行几次梯度更新，得到更新后的参数 $\theta_i'$：
 
     $$
-    \theta_i' = \theta - \alpha \nabla_\theta \mathcal{L}_{\mathcal{T}_i} (f_\theta)
+    \theta_i' = \theta - \alpha \nabla_\theta \mathcal{L}_{\mathcal{T}_i} (f(\theta))
     $$
 
    其中，$\alpha$ 是学习率，$\mathcal{L}_{\mathcal{T}_i}$ 是任务 $\mathcal{T}_i$ 上的损失函数。
@@ -49,7 +49,7 @@ MAML的核心思想是通过多任务训练，使得模型参数能够成为一�
 3. **元更新**：计算经过更新后的参数与任务损失的梯度，更新模型的初始参数：
 
    $$
-   \theta \leftarrow \theta - \beta \nabla_\theta \sum_{\mathcal{T}_i \sim p(\mathcal{T})} \mathcal{L}_{\mathcal{T}_i} (f_{\theta_i'})
+   \theta \leftarrow \theta - \beta \nabla_\theta \sum_{\mathcal{T}_i \sim p(\mathcal{T})} \mathcal{L}_{\mathcal{T}_i} (f({\theta_i'}))
    $$
 
    其中，$\beta$ 是元学习率。

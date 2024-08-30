@@ -50,13 +50,15 @@
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                packages: {'[+]': ['base', 'ams', 'boldsymbol']} // Add ams and boldsymbol packages
+                packages: {'[+]': ['base', 'ams', 'boldsymbol', 'newcommand', 'unicode']} // Add more packages
             },
             options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
             },
             loader: {
-                load: ['[tex]/ams', '[tex]/boldsymbol'] // Load ams and boldsymbol packages
+                load: ['[tex]/ams', '[tex]/boldsymbol', '[tex]/newcommand', '[tex]/unicode'] // Load more packages
             }
         };
 
@@ -72,7 +74,9 @@
                 markdownContent.innerHTML = marked.parse(markdownText);
 
                 // Render MathJax after updating the content
-                MathJax.typeset();
+                setTimeout(() => {
+                    MathJax.typesetPromise().catch(err => console.error('MathJax typesetting failed:', err));
+                }, 200); // Increase delay to ensure MathJax has enough time to process
             } catch (error) {
                 console.error('Error loading or parsing Markdown file:', error);
                 const markdownContent = document.getElementById('markdown-content');
