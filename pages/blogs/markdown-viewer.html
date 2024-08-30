@@ -53,7 +53,7 @@
                 packages: {'[+]': ['base', 'boldsymbol']} // Add boldsymbol package
             },
             options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
             },
             loader: {
                 load: ['[tex]/boldsymbol'] // Load boldsymbol package
@@ -64,6 +64,9 @@
         async function renderMarkdown(file) {
             try {
                 const response = await fetch(file);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const markdownText = await response.text();
                 const markdownContent = document.getElementById('markdown-content');
                 markdownContent.innerHTML = marked.parse(markdownText);
