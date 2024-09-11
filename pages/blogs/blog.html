@@ -13,6 +13,7 @@
             background: url('../../assets/images/background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
+            overflow-x: hidden;
         }
         .container {
             width: 90%;
@@ -25,12 +26,14 @@
             padding: 20px 0;
             text-align: center;
             border-bottom: 2px solid #ff6f61;
+            animation: fadeInDown 1s ease-in-out;
         }
         nav {
             background: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 10px 0;
             text-align: center;
+            animation: fadeInUp 1s ease-in-out;
         }
         nav ul {
             list-style: none;
@@ -58,6 +61,7 @@
             margin-top: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
         }
         footer {
             background: rgba(0, 0, 0, 0.7);
@@ -66,6 +70,7 @@
             padding: 10px 0;
             margin-top: 20px;
             border-top: 2px solid #ff6f61;
+            animation: fadeInUp 1s ease-in-out;
         }
         @media (max-width: 768px) {
             .container {
@@ -82,6 +87,7 @@
             position: relative;
             height: 300px;
             border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
         }
         .gallery img {
             width: 100%;
@@ -109,6 +115,7 @@
         }
         .content ul li {
             margin: 10px 0;
+            animation: fadeIn 1s ease-in-out;
         }
         .content ul li a {
             color: #ff6f61;
@@ -123,6 +130,53 @@
             height: 1px;
             background: #ff6f61;
             margin: 20px 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .content ul li a {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .content ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #ff6f61;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .content ul li a:hover::before {
+            transform: translateX(0);
         }
     </style>
 </head>
@@ -168,8 +222,10 @@
         
         <div class="content" id="blog">
             <h2>博客</h2>
-            <p>这里是我最新的博客文章：</p>
+            <p>这里是我的博客文章：</p>
             <ul>
+                <hr> <!-- 水平分割线 -->
+                <b>智能座舱知识专题</b>
                 <li><a href="markdown-viewer.html?file=SmartCockpit/DMSOMSRMS/DMSOMSRMS.md" target="_blank">DMSOMSRMS（智能座舱）</a></li>
                 <li><a href="markdown-viewer.html?file=SmartCockpit/FatigueAndDistraction/FatigueAndDistraction.md" target="_blank">FatigueAndDistraction（分心疲劳）</a></li>
                 <li><a href="markdown-viewer.html?file=SmartCockpit/FaceID/FaceID.md" target="_blank">FaceID（人脸识别）</a></li>
@@ -177,6 +233,7 @@
                 <li><a href="markdown-viewer.html?file=SmartCockpit/Emotion/Emotion.md" target="_blank">Emotion（情绪识别）</a></li>
                 <li><a href="markdown-viewer.html?file=SmartCockpit/HexagonDSP/HexagonDSP.md" target="_blank">HexagonDSP（高通DSP）</a></li>
                 <hr> <!-- 水平分割线 -->
+                <b>视觉&硬件知识专题</b>
                 <li><a href="markdown-viewer.html?file=Base/IMU/IMU.md" target="_blank">IMU（惯性测量单元）</a></li>
                 <li><a href="markdown-viewer.html?file=Base/IS/IS.md" target="_blank">IS（图像防抖）</a></li>
                 <li><a href="markdown-viewer.html?file=Base/UCVE/UCVE.md" target="_blank">UCVE（恐怖谷效应）</a></li>
@@ -188,6 +245,7 @@
                 <li><a href="markdown-viewer.html?file=Base/3A/3A.md" target="_blank">3A算法（自动对焦、自动曝光与自动白平衡）</a></li>
                 <li><a href="markdown-viewer.html?file=Base/ISP/ISP.md" target="_blank">ISP（图像信号处理器）</a></li>
                 <hr> <!-- 水平分割线 -->
+                <b>大模型知识专题</b>
                 <li><a href="markdown-viewer.html?file=BigModel/MM-LLM/MM-LLM.md" target="_blank">MM-LLM（多模态大语言模型）</a></li>
                 <li><a href="markdown-viewer.html?file=BigModel/SafetyAlignment/SafetyAlignment.md" target="_blank">SafetyAlignment（安全对齐）</a></li>
                 <li><a href="markdown-viewer.html?file=BigModel/SFT/SFT.md" target="_blank">SFT（监督微调）</a></li>
@@ -253,12 +311,14 @@
                 <li><a href="markdown-viewer.html?file=BigModel/ReflectionTuning/ReflectionTuning.md" target="_blank">ReflectionTuning（错误自我纠正）</a></li>
                 <li><a href="markdown-viewer.html?file=BigModel/APE/APE.md" target="_blank">APE（自动提示词工程）</a></li>
                 <hr> <!-- 水平分割线 -->
+                <b>热点话题专题</b>
                 <li><a href="markdown-viewer.html?file=Topics/Coder/Coder.md" target="_blank">Coder（AI程序员核心竞争力浅谈）</a></li>
                 <li><a href="markdown-viewer.html?file=Topics/FirstPrinciples/FirstPrinciples.md" target="_blank">FirstPrinciples（第一性原理）</a></li>
                 <li><a href="markdown-viewer.html?file=Topics/LCDP/LCDP.md" target="_blank">LCDP（低代码平台）</a></li>
                 <li><a href="markdown-viewer.html?file=Topics/CoderAgain/CoderAgain.md" target="_blank">CoderAgain（平衡日常编码与个人成长：程序员的高效之路）</a></li>
                 <li><a href="markdown-viewer.html?file=Topics/BigModel/BigModel.md" target="_blank">BigModel（AI模型：追求全能还是专精？）</a></li>
                 <hr> <!-- 水平分割线 -->
+                <b>机器学习知识专题</b>
                 <li><a href="markdown-viewer.html?file=ML/XSupervisedLearning/XSupervisedLearning.md" target="_blank">XSupervisedLearning（自监督和无监督）</a></li>
                 <li><a href="markdown-viewer.html?file=ML/Heuristic/Heuristic.md" target="_blank">Heuristic（启发式算法）</a></li>
                 <li><a href="markdown-viewer.html?file=ML/RL/RL.md" target="_blank">RL（强化学习）</a></li>
@@ -283,6 +343,7 @@
                 <li><a href="markdown-viewer.html?file=ML/SandC/SandC.md" target="_blank">SandC（符号主义和连接主义）</a></li>
                 <li><a href="markdown-viewer.html?file=ML/CL/CL.md" target="_blank">CL（对比学习）</a></li>
                 <hr> <!-- 水平分割线 -->
+                <b>数据结构知识专题</b>
                 <li><a href="markdown-viewer.html?file=DataStructures/Graph/Graph.md" target="_blank">Graph（图数据结构）</a></li>
                 <li><a href="markdown-viewer.html?file=DataStructures/Tree/Tree.md" target="_blank">Tree（树数据结构）</a></li>
                 <li><a href="markdown-viewer.html?file=DataStructures/HashChain/HashChain.md" target="_blank">HashChain（哈希链数据结构）</a></li>
