@@ -1,4 +1,4 @@
-
+![SmoothQuant](BigModel/SmoothQuant/SmoothQuant.png)
 # SmoothQuant：大模型量化的高效利器
 
 最近重新看了一些量化的内容，相比QAT，PTQ感觉也大有可为，后续可能也会多多使用一下PTQ。
