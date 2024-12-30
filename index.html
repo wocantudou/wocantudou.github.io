@@ -4,18 +4,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Chauvin的个人主页，展示个人作品和博客">
+    <meta name="keywords" content="Chauvin, 个人主页, 博客, 作品集">
+    <meta name="author" content="Chauvin">
+    <meta property="og:title" content="Chauvin">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wocantudou.github.io">
+    <meta property="og:image" content="assets/images/Chauvin.jpg">
+    <meta property="og:description" content="Chauvin的个人主页，展示个人作品和博客">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@wocantudou">
     <title>Chauvin</title>
-    <!-- 确保main.css存在并包含通用样式 -->
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animations.css">
-    <!-- 异步加载particles.min.js -->
+    <link rel="preload" href="assets/js/main_scripts.js" as="script">
+    <link rel="preload" href="assets/js/config/particlesConfig.js" as="script">
+    <link rel="prefetch" href="pages/resume.html">
+    <link rel="prefetch" href="pages/blogs/blog.html">
     <script async src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
     <div class="content">
-        <header class="centered gradient-text">Chauvin</header>
-        <div class="quote bounce">
+        <header class="centered gradient-text animate-on-scroll">Chauvin</header>
+        <div class="quote bounce animate-on-scroll">
             <p>心有猛虎，细嗅蔷薇。</p>
             <p>《于我，过去，现在以及未来》—— <em class="rotate3d">西格里夫·萨松</em></p>
         </div>
