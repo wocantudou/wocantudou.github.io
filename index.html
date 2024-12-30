@@ -7,115 +7,7 @@
     <title>Chauvin</title>
     <!-- 确保main.css存在并包含通用样式 -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <style>
-        :root {
-            --primary-color: #76b852; /* 更新的颜色以提高可见性 */
-            --link-color: #f3ec78; /* 链接的亮色以增加对比度 */
-            --hover-color: #af4261; /* 鼠标悬停/聚焦时的颜色变化 */
-            --animation-duration: 2s; /* 动画持续时间变量 */
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #000;
-            color: var(--primary-color);
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            background-size: cover;
-            background-position: 50% 50%;
-            background-repeat: no-repeat;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .centered {
-            text-align: center;
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .gradient-text {
-            background: -webkit-linear-gradient(45deg, #f3ec78, #af4261);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-shift 3s infinite alternate;
-        }
-
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        .blink {
-            animation: blink-animation 1s steps(5, start) infinite;
-            -webkit-animation: blink-animation 1s steps(5, start) infinite;
-        }
-
-        @keyframes blink-animation {
-            to {
-                visibility: hidden;
-            }
-        }
-
-        .rotate3d {
-            display: inline-block;
-            animation: rotate3d 5s infinite linear;
-        }
-
-        @keyframes rotate3d {
-            0% { transform: rotate3D(1, 1, 1, 0deg); }
-            100% { transform: rotate3D(1, 1, 1, 360deg); }
-        }
-
-        .bounce {
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-30px);}
-            60% {transform: translateY(-15px);}
-        }
-
-        a {
-            color: var(--link-color);
-            transition: color 0.3s ease;
-        }
-
-        a:hover, a:focus {
-            color: var(--hover-color);
-        }
-
-        @media screen and (max-width: 768px) {
-            .centered {
-                margin: 20px auto;
-            }
-
-            .content {
-                padding: 10px;
-            }
-
-            .gradient-text {
-                font-size: 24px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/animations.css">
     <!-- 异步加载particles.min.js -->
     <script async src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
@@ -145,6 +37,6 @@
         </div>
     </div>
     <!-- 将JavaScript代码分离到外部文件 -->
-    <script src="assets/js/main_scripts.js"></script>
+    <script type="module" src="assets/js/main_scripts.js"></script>
 </body>
 </html>
