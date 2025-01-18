@@ -9,3 +9,9 @@ updateTime();
 
 // 每秒更新时间
 setInterval(updateTime, 1000);
+
+document.addEventListener('contextmenu', function (e) {
+    if (e.target.nodeName === 'VIDEO') {
+        e.preventDefault();
+    }
+}, false);
