@@ -1,32 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#1a73e8">
     <title>Chauvin - AI视觉算法工程师</title>
     <meta name="description" content="Chauvin的个人主页，AI视觉算法工程师，拥有丰富的AI视觉算法开发经验，专业技能和业绩展示。">
+    <meta name="keywords" content="AI视觉,算法工程师,计算机视觉,人工智能,机器学习">
     <link rel="stylesheet" href="../assets/css/resume.css">
+    <link rel="stylesheet" href="../assets/css/resume-responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/fonts/icomoon.woff" as="font" type="font/woff" crossorigin>
+    <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="left">
-                <img src="../assets/images/Chauvin.jpg" alt="Chauvin的头像" class="photo">
+<header class="header" role="banner">
+    <div class="container">
+        <div class="header-grid">
+            <div class="header-left">
+                <picture>
+                    <source srcset="../assets/images/Chauvin.jpg" type="image/jpg">
+                    <img src="../assets/images/Chauvin.jpg" alt="Chauvin的头像" class="photo" width="150" height="150" loading="lazy">
+                </picture>
             </div>
-            <div class="right">
-                <h1>Chauvin - AI视觉算法工程师</h1>
-                <a href="../assets/pdfs/Social_professional_title.pdf" class="btn-download" target="_blank">社会职称 <i class="fas fa-download"></i></a>
-                <div class="highlight">
-                    <p>
+            <div class="header-right">
+                <h1 class="header-title">Chauvin - AI视觉算法工程师</h1>
+                <div class="header-buttons">
+                    <a href="../assets/pdfs/Social_professional_title_SeniorEngineer.pdf" class="btn-download" target="_blank" rel="noopener noreferrer" aria-label="下载人工智能副高职称证书">
+                        人工智能-副高职称 <i class="fas fa-download" aria-hidden="true"></i>
+                    </a>
+                    <a href="../assets/pdfs/Social_professional_title_IntermediateEngineer.pdf" class="btn-download" target="_blank" rel="noopener noreferrer" aria-label="下载电子信息工程工程师职称证书">
+                        电子信息工程-工程师职称 <i class="fas fa-download" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="header-highlight" aria-labelledby="profile-summary">
+                    <p id="profile-summary">
                         AI视觉算法研发负责人，负责AI视觉算法整体技术规划，以及体系建设工作，推动公司内部技术路线管理、研发过程管理、人才发展、人才培训，任职资格体系建设等。主导多个重点AI视觉产品的技术规划和架构实现。专注于将人工智能技术应用于图像处理和计算机视觉领域。拥有丰富的实战经验和卓越的技术能力。
                     </p>
                 </div>
             </div>
         </div>
-    </header>
-    <main class="container">
+    </div>
+</header>
+    <main class="container" role="main">
+    <nav class="quick-nav" aria-label="快速导航">
+        <ul>
+            <li><a href="#contact-info">联系信息</a></li>
+            <li><a href="#professional-summary">专业摘要</a></li>
+            <li><a href="#education">教育经历</a></li>
+            <li><a href="#work-experience">工作经历</a></li>
+            <li><a href="#projects">业绩经历</a></li>
+            <li><a href="#patents">授权专利</a></li>
+            <li><a href="#skills">专业技能</a></li>
+            <li><a href="#experience">关键经验</a></li>
+            <li><a href="#gallery">作品展示</a></li>
+            <li><a href="#video-demos">视频演示</a></li>
+            <li><a href="#downloads">下载安装包</a></li>
+        </ul>
+    </nav>
         <section id="contact-info" class="section">
             <h2>联系信息</h2>
             <p>Email: <a href="mailto:shawen@mail.ustc.edu.cn">shawen@mail.ustc.edu.cn</a></p>
@@ -34,7 +66,7 @@
         </section>
         <section id="professional-summary" class="section">
             <h2>专业摘要</h2>
-            <p>我是一名经验丰富的AI视觉算法工程师，擅长人脸和人体检测识别、手势识别、车辆与车牌检测识别等领域。在领先的AI科技公司担任算法团队的Leader，具有深厚的实战经验和丰富的产品落地经验,现在正智能座舱领域搬砖。</p>
+            <p>我是一名经验丰富的AI视觉算法工程师，擅长人脸和人体检测识别、手势识别、车辆与车牌检测识别等领域。在领先的AI科技公司担任算法团队的Leader，具有深厚的实战经验和丰富的产品落地经验，目前在智能座舱领域搬砖。</p>
         </section>
         <section id="education" class="section">
             <h2>教育经历</h2>
@@ -214,11 +246,20 @@
             </ul>
         </section>
     </main>
-    <footer>
-        <div class="container">
-            &copy; 2024 Chauvin. All rights reserved.
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 Chauvin. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="页脚导航">
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="blogs/blog.html">博客</a></li>
+                    <li><a href="resume.html">简历</a></li>
+                </ul>
+            </nav>
         </div>
-    </footer>
+    </div>
+</footer>
     <div class="time">当前时间：<span id="time"></span></div>
     <script src="../assets/js/resume_scripts.js"></script>
 </body>
