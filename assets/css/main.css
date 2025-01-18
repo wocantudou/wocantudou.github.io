@@ -1,364 +1,213 @@
-/* CSS Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* 基础样式重置 */
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* CSS Variables */
-:root {
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Microsoft YaHei", Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji";
-  --font-size: 16px;
-  --line-height: 1.8;
-  --transition-duration: 0.3s;
-  --color-primary: #007bff;
-  --color-secondary: #6c757d;
-  --color-light: #f8f9fa;
-  --color-dark: #343a40;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
-}
-
-* {
   box-sizing: border-box;
 }
 
-html { 
-  transition: background-color var(--transition-duration) ease; 
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --accent-color: #f59e0b;
+  --text-color: #1e293b;
+  --bg-color: #f8fafc;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
 body {
-  font: var(--font-size)/var(--line-height) var(--font-family);
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: var(--text-color);
+  background: var(--bg-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 英雄区域 */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
   text-align: center;
 }
 
-p { margin: 20px 0; }
-
-ul, ol { list-style: none; }
-
-
-/* Fonts
-/* ================================================= */
-@font-face {
-  font-family: 'icomoon';
-  src:
-    url('../fonts/icomoon.ttf?mrs7x8') format('truetype'),
-    url('../fonts/icomoon.woff?mrs7x8') format('woff'),
-    url('../fonts/icomoon.svg?mrs7x8#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-map-pin:before {
-  content: "\e902";
-}
-.icon-moon:before {
-  content: "\e900";
-}
-.icon-sun:before {
-  content: "\e901";
-}
-.icon-quotes-left:before {
-  content: "\e977";
-}
-.icon-quotes-right:before {
-  content: "\e978";
-}
-
-
-/* Animation
-/* ================================================= */
-.animate-slide-in-down,
-.animate-slide-in-up {
+/* 个人资料 */
+.profile-container {
   position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.profile-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   opacity: 0;
+  transition: var(--transition);
 }
 
-.animate-slide-in-down { top: -10px; }
-
-.animate-slide-in-up { bottom: -10px; }
-
-.no-js .animate-slide-in-down,
-.no-js .animate-slide-in-up { opacity: 1; }
-
-.no-js .animate-slide-in-down { top: 0; }
-
-.no-js .animate-slide-in-up { bottom: 0; }
-
-.animate-slide-in-left { left: -100%; }
-.no-js .animate-slide-in-left { left: 0; }
-
-.animate-slide-in-right { right: -100%; }
-.no-js .animate-slide-in-right { right: 0; }
-
-
-/* Headline
-/* ================================================= */
-.vi {
-  margin: 100px auto 0;
-  max-width: 780px;
-  animation: float 6s ease-in-out infinite;
+.profile-container:hover .profile-overlay {
+  opacity: 1;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+.profile-container:hover .profile-image {
+  transform: scale(1.1);
 }
 
-@media (max-width: 767px) {
-  .vi { margin-top: 50px; }
-}
-
-/* Glow Effect */
 .gradient-text {
-  background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #C7F464);
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #FF6B6B, 0 0 20px #4ECDC4, 0 0 30px #C7F464;
-  }
-  to {
-    text-shadow: 0 0 20px #FF6B6B, 0 0 40px #4ECDC4, 0 0 60px #C7F464;
-  }
+.subtitle {
+  color: white;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
 }
 
-/* Link Hover Effect */
-.links a {
-  transition: all 0.3s ease;
-  position: relative;
+/* 名言 */
+.quote-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
 }
 
-.links a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #C7F464);
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
+.quote-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--text-color);
 }
 
-.links a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+.quote-text footer {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #64748b;
 }
 
-
-/* Quote
-/* ================================================= */
-.quote {
-  position: relative;
-  overflow: hidden;
-  margin: 40px 20px;
-}
-
-.quote-line {
-  display: block;
-  position: relative;
-  height: 1px;
-  transition: all .3s ease;
-}
-
-.quote cite::before {
-  content: "-";
-  padding: 0 5px;
-}
-
-.quote-icon { position: absolute; }
-
-.quote-icon.animate-slide-in-down,
-.quote-icon.animate-slide-in-up { opacity: 0; }
-.no-js .quote-icon.animate-slide-in-down,
-.no-js .quote-icon.animate-slide-in-up { opacity: 1; }
-
-.quote-icon-start { left: 0; }
-.quote-icon-start.animate-slide-in-down { top: -10px; }
-.no-js .quote-icon-start.animate-slide-in-down { top: 0; }
-
-.quote-icon-end { right: 0; }
-.quote-icon-end.animate-slide-in-up { bottom: -10px; }
-.no-js .quote-icon-end.animate-slide-in-up { bottom: 0; }
-
-.quote-content { margin: 30px auto 0; }
-
-.quote-author { margin: 10px auto 30px; }
-
-
-/* Links
-/* ================================================= */
-.links {
-  margin-top: 40px;
-  font-size: 14px;
-}
-
-.links a {
-  display: inline-block;
-  position: relative;
-  margin-left: 10px;
-  text-decoration: none;
-  border-bottom: 1px dotted;
-  transition: border .3s ease, color .3s ease;
-}
-
-.links a:hover { border-bottom: 1px solid; }
-
-.links a:active { top: 1px !important; }
-
-.links a:first-child { margin-left: 0; }
-
-
-/* Location
-/* ================================================= */
-.location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-}
-
-.location-icon { font-size: 14px; }
-
-.location-text {
-  margin-left: 6px;
-  font-size: 13px;
-}
-
-.relocating {
-  opacity: 0;
-  font-size: 13px;
-  transition: all .3s ease;
-}
-
-
-/* Custom Cursor */
-.custom-cursor {
+/* 导航栏 */
+.main-nav {
   position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 2px solid #FF6B6B;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease-out, opacity 0.3s ease;
-  z-index: 9999;
-  mix-blend-mode: difference;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+  padding: 0.75rem 1.5rem;
 }
 
-/* Scroll Animations */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
 }
 
-.animate-on-scroll.animate {
-  opacity: 1;
-  transform: translateY(0);
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: var(--transition);
 }
 
-/* LIGHT MODE
-/* ================================================= */
-html { background-color: white; }
-body { color: #333; }
-::selection { background: #222; color: white; }
-h1 { color: #222; }
-.quote { color: #666; }
-.quote-icon { color: #ccc; }
-.quote-line { background: #eee; }
-a { color: #333; }
-.links a { border-bottom-color: #999; }
-.links a:hover { border-bottom-color: #333; }
-.location { color: #666; }
-.relocating { color: #ccc; }
+.nav-link:hover {
+  color: var(--primary-color);
+}
 
+/* 信息区域 */
+.info-section {
+  position: fixed;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+  color: var(--text-color);
+}
 
-/* DARK MODE
-/* ================================================= */
-@media (prefers-color-scheme: dark) {
-  html { background: #121621; }
-  body { color: #6C7486; }
-  ::selection { background: #222; color: #99A3BA; }
-  h1 { color: #E4ECFA; }
-  .quote { color: #6C7486; }
-  .quote-icon { color: #3F4656; }
-  .quote-line { background: #242836; }
-  a { color: #99A3BA; }
-  .links a { border-bottom-color: #6C7486; }
-  .links a:hover { color: #E4ECFA; border-bottom-color: #99A3BA; }
-  .location { color: #6C7486; }
+.location-info,
+.keyboard-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* 社交链接 */
+.social-links {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  color: var(--primary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1rem;
+  }
+
+  .profile-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .quote-container {
+    padding: 1rem;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .info-section {
+    flex-direction: column;
+    gap: 1rem;
+    bottom: 8rem;
+  }
 }

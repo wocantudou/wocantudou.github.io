@@ -26,28 +26,50 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    <div class="content">
-        <header class="centered gradient-text animate-on-scroll">Chauvin</header>
-        <div class="quote bounce animate-on-scroll">
-            <p>心有猛虎，细嗅蔷薇。</p>
-            <p>《于我，过去，现在以及未来》—— <em class="rotate3d">西格里夫·萨松</em></p>
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="assets/images/Chauvin.jpg" alt="Chauvin" class="profile-image">
+                <div class="profile-overlay">
+                    <h1 class="gradient-text">Chauvin</h1>
+                    <h2 class="subtitle">Software Engineer & AI Enthusiast</h2>
+                </div>
+            </div>
+            
+            <div class="quote-container">
+                <blockquote class="quote-text">
+                    <p>心有猛虎，细嗅蔷薇。</p>
+                    <footer>—— <cite>西格里夫·萨松</cite></footer>
+                </blockquote>
+            </div>
         </div>
-        <div class="links blink">
-            <a href="https://github.com/wocantudou">GITHUB</a> |
-            <a href="pages/resume.html">RESUME</a> |
-            <a href="https://blog.csdn.net/mieshizhishou?type=blog">CSDN</a> |
-            <a href="https://weibo.com/wocantudou">WEIBO</a>
-            <a href="pages/blogs/blog.html">BLOG</a>
+    </div>
+
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li><a href="https://github.com/wocantudou" class="nav-link"><i class="icon-github"></i>GitHub</a></li>
+            <li><a href="pages/resume.html" class="nav-link"><i class="icon-resume"></i>Resume</a></li>
+            <li><a href="https://blog.csdn.net/mieshizhishou?type=blog" class="nav-link"><i class="icon-csdn"></i>CSDN</a></li>
+            <li><a href="https://weibo.com/wocantudou" class="nav-link"><i class="icon-weibo"></i>Weibo</a></li>
+            <li><a href="pages/blogs/blog.html" class="nav-link"><i class="icon-blog"></i>Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="info-section">
+        <div class="location-info">
+            <i class="icon-location"></i>
+            <span>HeFei, China</span>
         </div>
-        <div class="keys centered">
-            <p>Try pressing keyboard 'B' to get a bookmark.</p>
+        <div class="keyboard-hint">
+            <i class="icon-keyboard"></i>
+            <span>Press 'B' for bookmarks</span>
         </div>
-        <div class="location bounce">
-            <span>HeFei - China</span>
-        </div>
-        <div class="relocating rotate3d">
-            Navigating to: <span class="relocate-location"></span>...
-        </div>
+    </div>
+
+    <div class="social-links">
+        <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+        <a href="#" class="social-link"><i class="icon-twitter"></i></a>
+        <a href="#" class="social-link"><i class="icon-email"></i></a>
     </div>
     <!-- 将JavaScript代码分离到外部文件 -->
     <script type="module" src="assets/js/main_scripts.js"></script>
