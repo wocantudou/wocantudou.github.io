@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../../assets/js/marked.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
@@ -65,22 +65,46 @@
         // Function to fetch and render Markdown content
         async function renderMarkdown(file) {
             try {
-                const response = await fetch(file);
+                // Add base path for markdown files
+                const basePath = '../../pages/blogs/';
+                const fullPath = basePath + file;
+                
+                const response = await fetch(fullPath);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const markdownText = await response.text();
                 const markdownContent = document.getElementById('markdown-content');
+                
+                // Check if marked.js is loaded
+                if (typeof marked === 'undefined') {
+                    throw new Error('marked.js library not loaded');
+                }
+                
                 markdownContent.innerHTML = marked.parse(markdownText);
 
                 // Render MathJax after updating the content
                 setTimeout(() => {
-                    MathJax.typesetPromise().catch(err => console.error('MathJax typesetting failed:', err));
-                }, 200); // Increase delay to ensure MathJax has enough time to process
+                    if (typeof MathJax !== 'undefined') {
+                        MathJax.typesetPromise()
+                            .then(() => console.log('MathJax rendering complete'))
+                            .catch(err => console.error('MathJax typesetting failed:', err));
+                    } else {
+                        console.warn('MathJax not loaded');
+                    }
+                }, 500); // Increase delay to ensure MathJax has enough time to process
             } catch (error) {
                 console.error('Error loading or parsing Markdown file:', error);
                 const markdownContent = document.getElementById('markdown-content');
-                markdownContent.innerHTML = '<p>Error loading Markdown content.</p>';
+                markdownContent.innerHTML = `
+                    <p style="color: red">Error loading Markdown content: ${error.message}</p>
+                    <p>Please check:</p>
+                    <ul>
+                        <li>Markdown file exists at correct path</li>
+                        <li>marked.js library is loaded</li>
+                        <li>Browser console for more details</li>
+                    </ul>
+                `;
             }
         }
 
