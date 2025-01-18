@@ -157,7 +157,7 @@ body {
 }
 
 .location-info,
-.keyboard-hint {
+.welcome-message {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -165,6 +165,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   box-shadow: var(--shadow);
+  font-size: 0.9rem;
 }
 
 /* 社交链接 */
